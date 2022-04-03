@@ -1,0 +1,36 @@
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+  background-color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+
+  /* background-image: url("images/sincerely-media-7ZXx3JofFVY-unsplash.jpg"); */
+}
+.top_nav{
+  overflow: hidden;
+  background-color: rebeccapurple;
+  /* position: fixed; */
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 2px;
+}
+.avatar{
+  width: 80px;
+  object-fit: contain;
+  margin-right: 20px;
+}
+ul{
+  font-size: 14px;
+  margin: auto;
+  justify-content: space-between;
+  width:400px;
+  list-style: none;
+  display: flex;
+}
+ul a{
+  color: #fff;
+}
