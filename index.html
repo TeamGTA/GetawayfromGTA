@@ -1,68 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Getaway from the GTA</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
 
-<body>
-  <header>
-    <nav class="top_nav">
+  <body>
+    <header>
+      <nav class="top_nav">
+        <img
+          src="assets/logo/PHOTO-2022-03-31-20-16-27.jpg"
+          alt="Logo"
+          class="avatar"
+        />
+        <h1>Getaway From GTA</h1>
+        <ul>
+          <li><a href="#weather">Weather</a></li>
+          <li><a href="#">Restaurants</a></li>
+          <li><a href="#">Attractions</a></li>
+          <li><a href="#">About us</a></li>
+        </ul>
+      </nav>
+    </header>
 
-      <img src="assets/logo/PHOTO-2022-03-31-20-16-27.jpg" alt="Logo" class="avatar">
-      <h1>  Getaway From GTA</h1>
-      <ul>
-        <li><a href="#weather">Weather</a></li>
-        <li><a href="#">Restaurants</a></li>
-        <li><a href="#">Attractions</a></li>
-        <li><a href="#">About us</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <div class="side_nav">
-    <div class="search-container">
-      <form id="searchForm" class="input-group">
-        <input id="enterCity" placeholder="Search" name="search">
-        <br>
-        <label>
+    <div class="side_nav">
+      <div class="search-container">
+        <form id="searchForm" class="input-group">
+          <input id="enterCity" placeholder="Search" name="search" />
+          <br />
+          <label>
             Date of Travel:
-            <input type="date" name="arrive">
+            <input type="date" name="arrive" />
             <button type="submit"></button>
-        </label>
-        <br>
-        <label>
+          </label>
+          <br />
+          <label>
             Date of Leaving:
-            <input type="date" name="depart">
-        </label>
-        <button type="submit"></button>
+            <input type="date" name="depart" />
+          </label>
+          <button type="submit"></button>
         </form>
+      </div>
     </div>
-  </div>  
 
     <div class="top_center_bar">
-      <h2>Paris</h2>
-      <p>User input dates</p>
+      <h2></h2>
+      <p></p>
     </div>
 
     <div class="middle_center_bar">
       <div class="row">
         <div class="column">
-          <img src="assets/weather pic/weather image.webp" alt="Snow" style="width:90%">
-          <h2>Weather</h2>
-          <p>Check the weather before heading out!</p>
+          <img src="" alt="" style="width: 90%" />
+          <h2>Places most visited around the world.</h2>
+          <p>
+            Take a quick look if you have not decide where you want to travel!
+          </p>
         </div>
-        <div class="column">
-          <img src="assets/weather pic/weather image.webp" alt="Snow" style="width:90%">
-          <h2>Attractions</h2>
+        <section class="images">
+        <div class="responsive">
+          <div class="gallery">
+            <a
+              target="_blank"
+              href="https://www.cometoparis.com/paris-guide/what-to-do-in-paris-s938"
+            >
+              <img src="./assets/Cities/Paris.jpg" alt="Paris">
+            </a>
+            <div class="desc">Paris, city of love and romance.</div>
+          </div>
+        </div>
+
+        <div class="responsive">
+          <div class="gallery">
+            <a target="_blank" href="https://www.britannica.com/place/Rome">
+              <img src="./assets/Cities/Rome.jpg" alt="Rome" >
+            </a>
+            <div class="desc">Rome, famous for the Colosseum.</div>
+          </div>
+        </div>
+
+        <div class="responsive">
+          <div class="gallery">
+            <a target="_blank" href="https://www.britannica.com/place/New-York-state">
+              <img src="./assets/Cities/New York.jpg" alt="New York City" >
+            </a>
+            <div class="desc">New York, a city that never sleeps.</div>
+          </div>
+        </div>
+
+        <div class="responsive">
+          <div class="gallery">
+            <a target="_blank" href="https://www.britannica.com/place/Peru">
+              <img src="./assets/Cities/Peru.jpg" alt="Peru">
+            </a>
+            <div class="desc">Peru, famous for Machu Picchu.</div>
+          </div>
+        </div>
+
+        <div class="responsive">
+          <div class="gallery">
+            <a target="_blank" href="https://www.visitgreece.gr/mainland/attica/athens/">
+              <img src="./assets/Cities/Athens.webp" alt="Athens">
+            </a>
+            <div class="desc">Athens, the largest of the Greek city-states.</div>
+          </div>
+        </div>
+
+        <div class="responsive">
+          <div class="gallery">
+            <a target="_blank" href="https://www.countryreports.org/country/India.htm">
+              <img src="./assets/Cities/India.jpg" alt="India">
+            </a>
+            <div class="desc">India, known for many Iconic Monuments such as Taj Mahal.</div>
+          </div>
+        </div>
+      </section>
+
+          <!-- <h2>Attractions</h2>
           <p>Places to visit around you.</p>
         </div>
         <div class="column">
-          <img src="assets/weather pic/weather image.webp" alt="Snow" style="width:90%">
+          <img
+            src=""
+            alt=""
+            style="width: 90%"
+          />
           <h2>Restaurants</h2>
           <p>Places to fill your stomach.</p>
         </div>
@@ -72,26 +137,23 @@
       <p>Best time to visit.</p>
     </div>
 
-
-    <div class="bottom_left">
-      <h4>Resturants</h4>
-      <img src="assets/weather pic/weather image.webp" alt="Snow" style="width:90%">
     </div>
     <div class="right_left">
       <h4>Resturants</h4>
-      <img src="assets/weather pic/weather image.webp" alt="Snow" style="width:90%">
-    </div>
-
-      <div class="footer">
-        <h4>Made by TeamGTA ☺</h4>
-        <p>&copy; Have a Safe Trip</p>
-      </div>
-<script src="assets/js/script.js"></script>
-<script
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-Ash0O1gw112gFDHbdCm-eloaQPi7pNk&callback=initAutocomplete&libraries=places&v=weekly"
-async
-></script> 
-</body>
-</html>  
-
-  
+      <img
+        src=""
+        alt=""
+        style="width: 90%"
+      />
+    </div> -->
+    <footer class="footer">
+      <h4>Made by TeamGTA ☺</h4>
+      <p>&copy; Have a Safe Trip</p>
+    </footer>
+    <script src="assets/js/script.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-Ash0O1gw112gFDHbdCm-eloaQPi7pNk&callback=initAutocomplete&libraries=places&v=weekly"
+      async
+    ></script>
+  </body>
+</html>

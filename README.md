@@ -8,7 +8,7 @@ Our objective is to make a browser which provides the weather, top attractions, 
 
 # Installation
 
-Technology we used for the project are ...
+Technology we used for the project are HTML, CSS, Javascript, API.
 
 Some challenges we faced for this project ...
 
