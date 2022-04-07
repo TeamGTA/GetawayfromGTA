@@ -9,7 +9,7 @@ body{
   /* background-image: url("images/sincerely-media-7ZXx3JofFVY-unsplash.jpg"); */
 }
 .top_nav{
-  overflow: hidden;
+  /* overflow: hidden; */
   background-color: rebeccapurple;
   /* position: fixed; */
   top: 0;
@@ -48,6 +48,10 @@ ul a{
 
 }
 
+button {
+margin-top: 10px;
+}
+
 div.gallery {
   border: 1px solid #ccc;
 }
@@ -74,7 +78,7 @@ div.desc {
   padding: 0 6px;
   margin: 25px;
   float: right;
-  width: 24.99999%;
+  width: 25%;
   justify-content: right;
 }
 
@@ -91,16 +95,11 @@ div.desc {
   }
 }
 
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
 .images {
 width: 80%;
 display: inline-flexbox;
 float: right;
+object-fit: cover;
 }
 
 .footer {
