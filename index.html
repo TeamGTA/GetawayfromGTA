@@ -10,88 +10,105 @@
 </head>
 
 <body>
-  <header>
-    <nav class="top_nav">
-
-      <img src="assets/logo/PHOTO-2022-03-31-20-16-27.jpg" alt="Logo" class="avatar">
-      <h1>  Getaway From GTA</h1>
-      <ul>
-        <li><a href="#weather">Weather</a></li>
-        <li><a href="#">Restaurants</a></li>
-        <li><a href="#">Attractions</a></li>
-        <li><a href="#">About us</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <div class="side_nav">
-    <div class="search-container">
-      <form id="searchForm" class="input-group">
-        <input id="enterCity" placeholder="Search" name="search">
-        <br>
-        <label>
-            Date of Travel:
-            <input type="date" name="arrive">
-            <button type="submit"></button>
-        </label>
-        <br>
-        <label>
-            Date of Leaving:
-            <input type="date" name="depart">
-        </label>
-        <button type="submit"></button>
-        </form>
-    </div>
-  </div>  
-
-    <div class="top_center_bar">
-      <h2>Paris</h2>
-      <p>User input dates</p>
-    </div>
-
-    <div class="middle_center_bar">
-      <div class="row">
-        <div class="column">
-          <img src="assets/weather pic/weather image.webp" alt="Snow" style="width:90%">
-          <h2>Weather</h2>
-          <p>Check the weather before heading out!</p>
+    <header>
+        <nav class="top_nav">
+            <img src="assets/logo/PHOTO-2022-03-31-20-16-27.jpg" alt="Logo" class="avatar">
+            <h1> Getaway From GTA</h1>
+            <ul>
+                <li>
+                    <a href="#weather">Weather</a>
+                </li>
+                <li>
+                    <a href="#">Restaurants</a>
+                </li>
+                <li>
+                    <a href="#">Attractions</a>
+                </li>
+                <li>
+                    <a href="#">About us</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="sample-header">
+        <div class="sample-header-section">
+            <div class="form-style-5">
+                <form>
+                    <fieldset>
+                        <legend>
+                            Travel Info
+                        </legend>
+                        <input type="text" name="field1" id="enterCity" placeholder="Search City*">
+                        <input type="date" name="arrive" placeholder="Date of Travel*">
+                        <input type="date" name="depart" placeholder="Date of Leaving*">
+                    </fieldset>
+                </form>
+            </div>
         </div>
-        <div class="column">
-          <img src="assets/weather pic/weather image.webp" alt="Snow" style="width:90%">
-          <h2>Attractions</h2>
-          <p>Places to visit around you.</p>
+    </div>
+    <div class="sample-section-wrap">
+        <div class="sample-section">
+            <section class="ajax-section" id="weather">
+                <h2 class="display-4">Weather</h2>
+                <p>Check the weather before heading out!</p>
+                <div class="container">
+                    <ul class="cities"></ul>
+                </div>
+            </section>
+            <div id="tourist_attraction">
+                <h2 class="display-4">Attractions</h2>
+                <p>Places to visit around you.</p>
+                <div id="info" class="alert alert-primary"></div>
+                <nav class="text-center next">
+                    <button id="next_button" type="button" class="btn btn-primary" style="visibility: visible;">Next (10 of 62)</button>
+                </nav>
+                <div class="flex-container">
+                    <div id="list" class="list-group"></div>
+
+                    <div class="poi-description">
+                        <div id="poi" class="alert"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="middle_center_bar">
+                <div class="row">
+                    <div class="column">
+                        <img src="assets/weather pic/weather image.webp" alt="Snow" style="width:90%">
+                        <h2>Weather</h2>
+                        <p>Check the weather before heading out!</p>
+                    </div>
+                    <div class="column">
+                        <img src="assets/weather pic/weather image.webp" alt="Snow" style="width:90%">
+                        <h2>Attractions</h2>
+                        <p>Places to visit around you.</p>
+                    </div>
+                    <div class="column">
+                        <img src="assets/weather pic/weather image.webp" alt="Snow" style="width:90%">
+                        <h2>Restaurants</h2>
+                        <p>Places to fill your stomach.</p>
+                    </div>
+                </div>
+            </div> -->
+            <!-- <div class="visit_time">
+                <p>Best time to visit.</p>
+            </div> -->
+            <div class="bottom_left">
+                <h4>Resturants</h4>
+                <img src="assets/weather pic/weather image.webp" alt="Snow" style="width:90%">
+            </div>
+            <div class="right_left">
+                <h4>Resturants</h4>
+                <img src="assets/weather pic/weather image.webp" alt="Snow" style="width:90%">
+            </div>
         </div>
-        <div class="column">
-          <img src="assets/weather pic/weather image.webp" alt="Snow" style="width:90%">
-          <h2>Restaurants</h2>
-          <p>Places to fill your stomach.</p>
-        </div>
-      </div>
     </div>
-    <div class="visit_time">
-      <p>Best time to visit.</p>
-    </div>
-
-
-    <div class="bottom_left">
-      <h4>Resturants</h4>
-      <img src="assets/weather pic/weather image.webp" alt="Snow" style="width:90%">
-    </div>
-    <div class="right_left">
-      <h4>Resturants</h4>
-      <img src="assets/weather pic/weather image.webp" alt="Snow" style="width:90%">
-    </div>
-
-      <div class="footer">
+    <div class="footer">
         <h4>Made by TeamGTA ☺</h4>
         <p>&copy; Have a Safe Trip</p>
-      </div>
-<script src="assets/js/script.js"></script>
-<script
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-Ash0O1gw112gFDHbdCm-eloaQPi7pNk&callback=initAutocomplete&libraries=places&v=weekly"
-async
-></script> 
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-Ash0O1gw112gFDHbdCm-eloaQPi7pNk&callback=initAutocomplete&libraries=places&v=weekly" async></script>
 </body>
-</html>  
 
-  
+</html>
