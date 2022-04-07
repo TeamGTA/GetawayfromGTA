@@ -1,6 +1,8 @@
 $(function() {
     $('#tourist_attraction').hide();
     $('#weather').hide();
+    $('#food').hide();
+    $('#results').hide();
     parallax_height();
 });
 
@@ -33,6 +35,7 @@ function initAutocomplete() {
     // Listen for the event fired when the user selects a prediction and retrieve
     // more details for that place.
     searchBox.addListener("places_changed", () => {
+        $('#results').show();
         const places = searchBox.getPlaces();
         console.log("===Place Info Object====")
         console.log(places)
@@ -195,3 +198,47 @@ function createListItem(item) {
     });
     return a;
 }
+
+
+// Worldwide Restaurant API
+
+
+// var apiKey_food = '3ca2473663mshadfed96d78e1943p118f82jsnb3ea968dd263'
+
+// function getfood(city) {
+//     $('#weather').show();
+//     const msg = document.querySelector(".top-banner .msg");
+//     const list = document.querySelector(".ajax-section .cities");
+//     //ajax here
+//     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey_weather}&units=metric`;
+
+//     fetch(url)
+//         .then(response => response.json())
+//         .then(data => {
+//             const { main, name, sys, weather } = data;
+//             const icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${
+//         weather[0]["icon"]
+//       }.svg`;
+
+//             const li = document.createElement("li");
+//             li.classList.add("city");
+//             const markup = `
+//         <h2 class="city-name" data-name="${name},${sys.country}">
+//           <span>${name}</span>
+//           <sup>${sys.country}</sup>
+//         </h2>
+//         <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup></div>
+//         <figure>
+//           <img class="city-icon" src="${icon}" alt="${
+//         weather[0]["description"]
+//       }">
+//           <figcaption>${weather[0]["description"]}</figcaption>
+//         </figure>
+//       `;
+//             li.innerHTML = markup;
+//             list.appendChild(li);
+//         })
+//         .catch(() => {
+//             msg.textContent = "Please search for a valid city 😩";
+//         });
+// }

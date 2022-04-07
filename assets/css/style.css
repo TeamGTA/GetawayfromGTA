@@ -197,12 +197,95 @@ ul {
 ul a {
     color: #fff;
     cursor: pointer;
+    position: relative;
+    left: 300px;
 }
 
 p {
     margin-top: 0;
     margin-bottom: 1rem;
 }
+
+/* adding anna's */
+div.gallery {
+    border: 5px solid rebeccapurple;
+  }
+  
+  div.gallery:hover {
+    border: 5px solid #777;
+  }
+  
+  div.gallery img {
+    width: 100%;
+    height: auto;
+  }
+
+  div.desc {
+    padding: 10px;
+    text-align: center;
+  }
+  .responsive {
+    padding: 0 6px;
+    margin: 25px;
+    float: left;
+    width: 50%; 
+    justify-content: left;
+  }
+  
+  @media only screen and (max-width: 700px) {
+    .responsive {
+      width: 49.99999%;
+      margin: 6px 0;
+    }
+  }
+  
+  @media only screen and (max-width: 500px) {
+    .responsive {
+      width: 100%;
+    }
+  }
+
+  .images1 {
+    width: 40%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top : -150px;
+    }
+    
+    .images1 h4 {
+        text-indent: 40px;
+        position: relative;
+        top: 20px;
+    }
+    .images2 {
+        width : 40%;
+       float: right;
+       display: flex;
+       flex-direction: column;
+       position: relative;
+       top: -150px;
+       left: 230px;
+    }
+    .images2 h4 {
+        text-indent: 40px;
+        position: relative;
+        top: 20px;
+    }
+
+    .footer {
+      position:fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: rebeccapurple;
+      color: white;
+      text-align: center;
+    }
+
+/* Anna's */
+
 
 *,
  ::after,
