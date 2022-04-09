@@ -21,10 +21,15 @@ $(window).resize(function() {
     parallax_height();
 });
 
+
+$("#search-form").submit(function(e) {
+    return false;
+});
+
 function initAutocomplete() {
     var options = {
         // type cities
-        types: ['(cities)'],
+        types: ['cities'],
         // only USA
         componentRestrictions: { country: "us" }
     };
@@ -57,7 +62,8 @@ function getWeather(city) {
     $('#weather').show();
     const msg = document.querySelector(".top-banner .msg");
     const list = document.querySelector(".ajax-section .cities");
-    //ajax here
+    list.innerHTML = ""
+        //ajax here
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey_weather}&units=metric`;
 
     fetch(url)
@@ -69,7 +75,8 @@ function getWeather(city) {
       }.svg`;
 
             const li = document.createElement("li");
-            li.classList.add("city");
+            li.className = "city text-center"
+
             const markup = `
         <h2 class="city-name" data-name="${name},${sys.country}">
           <span>${name}</span>
@@ -84,7 +91,9 @@ function getWeather(city) {
         </figure>
       `;
             li.innerHTML = markup;
-            list.appendChild(li);
+            // list.appendChild(li);
+            console.log(li)
+            list.innerHTML = li.outerHTML
         })
         .catch(() => {
             msg.textContent = "Please search for a valid city 😩";
@@ -129,22 +138,80 @@ function getGeoName(name) {
             message = data.name;
             lon = data.lon;
             lat = data.lat;
+            getRestaurants(lat, lon);
             firstLoad(name);
         }
     })
 }
 
+
+
+function getRestaurants(lat, lon) {
+
+    const request = {
+        location: new google.maps.LatLng(lat, lon),
+        radius: 5000,
+        type: ['restaurant']
+    };
+
+    const results = [];
+    const input = document.getElementById("list_restaurant");
+    const service = new google.maps.places.PlacesService(input);
+    const displayRestaurant = () => {
+        $('#food').show();
+
+
+        var index = 1;
+        const list = document.getElementById("list_restaurant");
+        var top_restaurant = results.slice(0, 9)
+        top_restaurant.filter(result => result.rating)
+            .sort((a, b) => a.rating > b.rating ? -1 : 1)
+            .forEach(result => {
+                list.innerHTML +=
+                    `<div class='card card-${index}'>
+                    <div class='card__icon'><img src='${result.icon}' width='50px' /></div>
+                    <p class='card__exit'><i class='fas fa fa-clock-o'></i></p>
+                    <h2 class='card__title'>${result.name}</h2>
+                    <p><i class='fas fa fa-map-marker' style="color:white"></i> ${result.vicinity}</p>
+                    <p class='card__apply'>
+                    <a class='card__link' href='#'><i class='fas fa fa-star'></i>${result.rating}</a>
+                    </p>
+                </div>`;
+                index++;
+                if (index == 5)
+                    index = 1;
+
+            });
+    }
+    const callback = (response, status, pagination) => {
+        if (status == google.maps.places.PlacesServiceStatus.OK) {
+            results.push(...response);
+        }
+        console.log(results)
+
+        if (pagination.hasNextPage) {
+            setTimeout(() => pagination.nextPage(), 2000);
+        } else {
+            displayRestaurant();
+        }
+    }
+    service.nearbySearch(request, callback);
+
+}
+
+
+
 function firstLoad(name) {
     apiGet(
         "radius",
-        `radius=1000&limit=${pageLength}&offset=${offset}&lon=${lon}&lat=${lat}&rate=2&format=count`
+        `radius=1000&limit=${ pageLength }&offset=${ offset }&lon=${ lon } &lat=${ lat }&rate=2&format=count`
     ).then(function(data) {
         count = data.count;
         offset = 0;
         console.log(data)
         document.getElementById(
             "info"
-        ).innerHTML = `<p>${name}  ${count} Famous attractions with description in a 1km radius</p>`;
+        ).innerHTML = ` <p> ${ name } ${ count } Famous attractions with description in a 1 km radius </p>`;
         loadList();
     });
 }
@@ -199,6 +266,12 @@ function createListItem(item) {
     return a;
 }
 
+document
+    .getElementById("next_button")
+    .addEventListener("click", function() {
+        offset += pageLength;
+        loadList();
+    });
 
 // Worldwide Restaurant API
 

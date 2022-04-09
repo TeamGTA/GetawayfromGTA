@@ -6,6 +6,10 @@ body {
     /* background-image: url("images/sincerely-media-7ZXx3JofFVY-unsplash.jpg"); */
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .sample-header {
     position: fixed;
     left: 0;
@@ -31,7 +35,7 @@ body {
 
 .sample-header-section {
     position: relative;
-    padding: 15% 0 10%;
+    padding: 15% 0 30%;
     margin-left: auto;
     width: 100%;
     margin-right: auto;
@@ -93,23 +97,23 @@ h2 {
 .form-style-5 input[type="url"],
 .form-style-5 textarea,
 .form-style-5 select {
-    font-family: Georgia, "Times New Roman", Times, serif;
+    font-family: Georgia, Times, serif;
     background: rgba(255, 255, 255, .1);
     border: none;
-    border-radius: 4px;
+    border-radius: 25px;
     margin: 0;
     outline: 0;
-    padding: 10px;
+    padding: 22px;
     width: 100%;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     background-color: #e8eeef;
     color: #8a97a0;
-    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+    -webkit-box-shadow: 0 1px 0 rgb(0 0 0 / 3%) inset;
+    box-shadow: 0 1px 0 rgb(0 0 0 / 3%) inset;
     margin-bottom: 30px;
-    font-size: 25px !important;
+    font-size: 30px !important;
 }
 
 .form-style-5 input[type="text"]:focus,
@@ -123,7 +127,6 @@ h2 {
 .form-style-5 textarea:focus,
 .form-style-5 select:focus {
     background: #d2d9dd;
-    font-size: 25px !important;
 }
 
 .form-style-5 select {
@@ -169,7 +172,7 @@ h2 {
 
 .top_nav {
     overflow: hidden;
-    background-color: rebeccapurple;
+    background-color: #5b437a;
     position: fixed;
     top: 0;
     width: 100%;
@@ -177,11 +180,12 @@ h2 {
     display: flex;
     justify-content: space-between;
     padding: 2px;
+    box-shadow: 0 9px 6px -2px rgb(0 0 0 / 20%);
+    z-index: 2
 }
 
 .avatar {
     width: 80px;
-    object-fit: contain;
     margin-right: 20px;
 }
 
@@ -206,97 +210,103 @@ p {
     margin-bottom: 1rem;
 }
 
+
 /* adding anna's */
+
 div.gallery {
-    border: 5px solid rebeccapurple;
-  }
-  
-  div.gallery:hover {
+    border: 5px solid #5b437a;
+    border-radius: 10px;
+}
+
+div.gallery:hover {
     border: 5px solid #777;
-  }
-  
-  div.gallery img {
+}
+
+div.gallery img {
     width: 100%;
     height: auto;
-  }
+}
 
-  div.desc {
+div.desc {
     padding: 10px;
     text-align: center;
-  }
-  .responsive {
+}
+
+.responsive {
     padding: 0 6px;
     margin: 25px;
     float: left;
-    width: 50%; 
+    width: 50%;
     justify-content: left;
-  }
-  
-  @media only screen and (max-width: 700px) {
-    .responsive {
-      width: 49.99999%;
-      margin: 6px 0;
-    }
-  }
-  
-  @media only screen and (max-width: 500px) {
-    .responsive {
-      width: 100%;
-    }
-  }
+}
 
-  .images1 {
+@media only screen and (max-width: 700px) {
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .responsive {
+        width: 100%;
+    }
+}
+
+.images1 {
     width: 40%;
     float: left;
     display: flex;
     flex-direction: column;
     position: relative;
-    top : -150px;
-    }
-    
-    .images1 h4 {
-        text-indent: 40px;
-        position: relative;
-        top: 20px;
-    }
-    .images2 {
-        width : 40%;
-       float: right;
-       display: flex;
-       flex-direction: column;
-       position: relative;
-       top: -150px;
-       left: 230px;
-    }
-    .images2 h4 {
-        text-indent: 40px;
-        position: relative;
-        top: 20px;
-    }
+    top: -150px;
+}
 
-    .footer {
-      position:fixed;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      background-color: rebeccapurple;
-      color: white;
-      text-align: center;
-    }
+.images1 h4 {
+    text-indent: 40px;
+    position: relative;
+    top: 20px;
+}
+
+.images2 {
+    width: 40%;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: -150px;
+    left: 230px;
+}
+
+.images2 h4 {
+    text-indent: 40px;
+    position: relative;
+    top: 20px;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #5b437a;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    z-index: 3;
+}
+
+.subhead {
+    font-size: 22px;
+}
+
 
 /* Anna's */
-
 
 *,
  ::after,
  ::before {
     box-sizing: border-box;
-}
-
-.alert-primary {
-    color: #004085;
-    background-color: #cce5ff;
-    border-color: #b8daff;
 }
 
 p {
@@ -305,11 +315,12 @@ p {
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+    line-height: 25px;
 }
 
 .alert-primary {
-    color: #004085;
-    background-color: #cce5ff;
+    color: #fff;
+    background-color: #5b437a;
     border-color: #b8daff;
 }
 
@@ -337,7 +348,7 @@ p {
 
 .ajax-section .city {
     position: relative;
-    padding: 40px 10%;
+    padding: 40px 13%;
     border-radius: 20px;
     background: #fff;
     color: #53627c;
@@ -366,7 +377,7 @@ p {
     font-size: 5rem;
     font-weight: bold;
     margin-top: 10px;
-    color: #53627c;
+    color: #5b437a;
 }
 
 .ajax-section .city sup {
@@ -399,16 +410,16 @@ p {
 .list-group-item.active {
     z-index: 2;
     color: #fff;
-    background-color: #007bff;
-    border-color: #007bff;
+    background-color: #5b437a;
+    border-color: rgb(28, 8, 49);
     cursor: pointer;
 }
 
 .list-group-item.active:hover {
     z-index: 2;
     color: #fff;
-    background-color: #007bff;
-    border-color: #007bff;
+    background-color: #5b437a;
+    border-color: rgb(28, 8, 49);
 }
 
 .list-group-item:first-child {
@@ -440,8 +451,8 @@ a:not([href]) {
 .list-group-item.active {
     z-index: 2;
     color: #fff;
-    background-color: #007bff;
-    border-color: #007bff;
+    background-color: #5b437a;
+    border-color: rgb(28, 8, 49);
 }
 
 .next {
@@ -451,8 +462,8 @@ a:not([href]) {
 
 .btn-primary {
     color: #fff;
-    background-color: #007bff;
-    border-color: #007bff;
+    background-color: #5b437a;
+    border-color: rgb(28, 8, 49);
 }
 
 .btn {
@@ -503,12 +514,16 @@ a:not([href]):hover {
 
 .btn-primary {
     color: #fff;
-    background-color: #007bff;
-    border-color: #007bff;
+    background-color: #5b437a;
+    border-color: rgb(28, 8, 49);
 }
 
 .poi-description {
     width: 50%;
+}
+
+.alert img {
+    border: 2px solid #5b437a;
 }
 
 .flex-container {
@@ -518,4 +533,107 @@ a:not([href]):hover {
 .display-4 {
     font-size: 3.5rem;
     font-weight: 300;
+}
+
+
+/* SECTION Restaurant
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    margin: 20px;
+    padding: 20px;
+    width: 500px;
+    min-height: 200px;
+    display: grid;
+    grid-template-rows: 20px 50px 1fr 50px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s;
+}
+
+.card:hover {
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+    transform: scale(1.01);
+}
+
+.card__link,
+.card__exit,
+.card__icon {
+    position: relative;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.card__link::after {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    content: "";
+    width: 0%;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.6);
+    transition: all 0.5s;
+}
+
+.card__link:hover::after {
+    width: 100%;
+}
+
+.card__exit {
+    grid-row: 1/2;
+    justify-self: end;
+}
+
+.card__icon {
+    grid-row: 2/3;
+    font-size: 30px;
+}
+
+.card__title {
+    grid-row: 3/4;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+.card__apply {
+    grid-row: 4/5;
+    align-self: center;
+}
+
+
+/* CARD BACKGROUNDS */
+
+.card-1 {
+    background: radial-gradient(#1fe4f5, #3fbafe);
+}
+
+.card-2 {
+    background: radial-gradient(#fbc1cc, #fa99b2);
+}
+
+.card-3 {
+    background: radial-gradient(#76b2fe, #b69efe);
+}
+
+.card-4 {
+    background: radial-gradient(#60efbc, #58d5c9);
+}
+
+.card-5 {
+    background: radial-gradient(#f588d8, #c0a3e5);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1600px) {
+    .cards {
+        justify-content: center;
+    }
 }
