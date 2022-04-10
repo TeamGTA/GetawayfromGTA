@@ -51,9 +51,9 @@ Some top restaurants will be shown after the attrations since tourist gets hungr
   # screenshot Of Website
 ![Screen Shot 2022-04-10 at 2 45 35 PM](https://user-images.githubusercontent.com/99456130/162639808-90ad6a2d-4ed7-49eb-a821-fc0cfb6102bf.png)
 
-# Screenshot Of Weather
+# #Screenshot Of Weather
 ![Screen Shot 2022-04-10 at 5 09 25 PM](https://user-images.githubusercontent.com/99456130/162640144-da227a47-4500-42bd-8064-10c691ea5b87.png)
-#  screenshot of attractions
+# # screenshot of attractions
 ![Screen Shot 2022-04-10 at 5 10 12 PM](https://user-images.githubusercontent.com/99456130/162640180-84da126b-040f-4727-bf75-45736e95b436.png)
 ![Screen Shot 2022-04-10 at 5 10 18 PM](https://user-images.githubusercontent.com/99456130/162640186-036c179b-dc39-4074-af9c-f6ba71fa6567.png)
 ![Screen Shot 2022-04-10 at 5 10 30 PM](https://user-images.githubusercontent.com/99456130/162640189-edf65e20-ff30-4797-812e-de8489b68719.png)
