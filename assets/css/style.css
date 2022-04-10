@@ -404,22 +404,22 @@ p {
     flex-direction: column;
     padding-left: 0;
     margin-bottom: 0;
-    width: 50%;
+    width: 100%;
 }
 
 .list-group-item.active {
     z-index: 2;
     color: #fff;
-    background-color: #5b437a;
+    background-color: rgb(236, 191, 107);
     border-color: rgb(28, 8, 49);
     cursor: pointer;
 }
 
 .list-group-item.active:hover {
     z-index: 2;
-    color: #fff;
-    background-color: #5b437a;
-    border-color: rgb(28, 8, 49);
+    color: rgb(33, 17, 17);
+    background-color: rgb(125, 234, 171);
+    border-color: rgb(141, 237, 237);
 }
 
 .list-group-item:first-child {
@@ -436,7 +436,7 @@ a:not([href]) {
     position: relative;
     display: block;
     padding: 0.75rem 1.25rem;
-    background-color: #fff;
+    background-color: rgba(239, 197, 91, 0.776);
     border: 1px solid rgba(0, 0, 0, .125);
     cursor: pointer;
 }
@@ -450,7 +450,7 @@ a:not([href]) {
 
 .list-group-item.active {
     z-index: 2;
-    color: #fff;
+    color: rgb(176, 106, 222);
     background-color: #5b437a;
     border-color: rgb(28, 8, 49);
 }
@@ -486,10 +486,10 @@ a:not([href]) {
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
-a:not([href]):hover {
+/* a:not([href]):hover {
     color: inherit;
     text-decoration: none;
-}
+} */
 
 .list-group-item+.list-group-item {
     border-top-width: 0;
