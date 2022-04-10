@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Getaway from the GTA</title>
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -20,17 +22,14 @@
                         <h3>Weather</h3>
                     </a>
                 </li>
-                <!-- <li>
-                    <a href="#food">Restaurants</a>
-                </li> -->
                 <li>
                     <a href="#tourist_attraction">
                         <h3>Attractions</h3>
                     </a>
                 </li>
                 <li>
-                    <a href="#About us">
-                        <h3>About us</h3>
+                    <a href="#food">
+                        <h3>Restaurants</h3>
                     </a>
                 </li>
             </ul>
@@ -38,83 +37,53 @@
     </header>
     <div class="sample-header">
         <div class="sample-header-section">
-
-                <!-- Adding Images for initial display -->
-                <section class="images1">
-                    <h4>Some popular destinations</h4>
-                    <div class="responsive">
+            <!-- Adding Images for initial display -->
+            <section class="images1">
+                <h4>Some popular destinations</h4>
+                <div class="responsive">
                     <div class="gallery">
-                        <a
-                        target="_blank"
-                        href="https://www.cometoparis.com/paris-guide/what-to-do-in-paris-s938"
-                        >
-                        <img src="./assets/img/Paris.jpg" alt="Paris">
+                        <a target="_blank" href="https://www.cometoparis.com/paris-guide/what-to-do-in-paris-s938">
+                            <img src="./assets/img/Paris.jpg" alt="Paris">
                         </a>
                         <div class="desc">Paris, city of love and romance.</div>
                     </div>
-                    </div>
-            
-                    <div class="responsive">
+                </div>
+                <div class="responsive">
                     <div class="gallery">
                         <a target="_blank" href="https://www.britannica.com/place/Rome">
-                        <img src="./assets/img/Rome.jpg" alt="Rome" >
+                            <img src="./assets/img/Rome.jpg" alt="Rome">
                         </a>
                         <div class="desc">Rome, famous for the Colosseum.</div>
                     </div>
-                    </div>
-            
-                    <!-- <div class="responsive">
-                    <div class="gallery">
-                        <a target="_blank" href="https://www.britannica.com/place/New-York-state">
-                        <img src="./assets/img/New York.jpg" alt="New York City" >
-                        </a>
-                        <div class="desc">New York, a city that never sleeps.</div>
-                    </div>
-                    </div> -->
-                </section>
-                <section class="images2">
-                    <h4>Some popular destinations</h4>
-                    <div class="responsive">
+                </div>
+            </section>
+            <section class="images2">
+                <h4>Some popular destinations</h4>
+                <div class="responsive">
                     <div class="gallery">
                         <a target="_blank" href="https://www.britannica.com/place/Peru">
-                        <img src="./assets/img/Peru.jpg" alt="Peru">
+                            <img src="./assets/img/Peru.jpg" alt="Peru">
                         </a>
                         <div class="desc">Peru, famous for Machu Picchu.</div>
                     </div>
-                    </div>
-
-                    <div class="responsive">
-                        <div class="gallery">
-                            <a target="_blank" href="https://www.countryreports.org/country/India.htm">
-                            <img src="./assets/img/India.jpg" alt="India">
-                            </a>
-                            <div class="desc">India, known for many Iconic Monuments such as Taj Mahal.</div>
-                        </div>
-                    </div>
-
-                    <!-- <div class="responsive">
+                </div>
+                <div class="responsive">
                     <div class="gallery">
-                        <a target="_blank" href="https://www.visitgreece.gr/mainland/attica/athens/">
-                        <img src="./assets/img/Athens.webp" alt="Athens">
+                        <a target="_blank" href="https://www.countryreports.org/country/India.htm">
+                            <img src="./assets/img/India.jpg" alt="India">
                         </a>
-                        <div class="desc">Athens, the largest of the Greek city-states.</div>
+                        <div class="desc">India, known for many Iconic Monuments such as Taj Mahal.</div>
                     </div>
-                    </div> -->
-            
-                    
-                </section>
-                <!-- Images class end here -->
-
-
-            <div class="form-style-5">                
-                <form>
+                </div>
+            </section>
+            <!-- Images class end here -->
+            <div class="form-style-5">
+                <form id="search-form">
                     <fieldset>
                         <legend>
                             Travel Location
                         </legend>
                         <input type="text" name="field1" id="enterCity" placeholder="Search City*">
-                        <!-- <input type="date" name="arrive" placeholder="Date of Travel*">
-                        <input type="date" name="depart" placeholder="Date of Leaving*"> -->
                     </fieldset>
                 </form>
             </div>
@@ -124,77 +93,38 @@
         <div class="sample-section">
             <section class="ajax-section" id="weather">
                 <h2 class="display-4">Weather</h2>
-                <p>Check the weather before heading out!</p>
+                <p class="subhead">Check the weather before heading out!</p>
                 <div class="container">
                     <ul class="cities"></ul>
                 </div>
             </section>
             <div id="tourist_attraction">
                 <h2 class="display-4">Attractions</h2>
-                <p>Places to visit around you.</p>
-                <div id="info" class="alert alert-primary"></div>
-                <nav class="text-center next">
-                    <!-- <button id="next_button" type="button" class="btn btn-primary" style="visibility: visible;">Next (10 of 62)</button> -->
-                </nav>
-                <div class="flex-container">
-                    <div id="list" class="list-group"></div>
-
-                    <div class="poi-description">
-                        <div id="poi" class="alert"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="food">
-                <h2 class="display-4">Restaurants</h2>
-                <p>Restaurants around you.</p>
+                <p class="subhead">Places to visit around you.</p>
                 <div id="info" class="alert alert-primary"></div>
                 <nav class="text-center next">
                     <button id="next_button" type="button" class="btn btn-primary" style="visibility: visible;">Next (10 of 62)</button>
                 </nav>
                 <div class="flex-container">
                     <div id="list" class="list-group"></div>
-
                     <div class="poi-description">
                         <div id="poi" class="alert"></div>
                     </div>
                 </div>
             </div>
-
-
-            <!-- <div class="middle_center_bar">
-                <div class="row">
-                    <div class="column">
-                        <img src="assets/weather pic/weather image.webp" alt="Snow" style="width:90%">
-                        <h2>Weather</h2>
-                        <p>Check the weather before heading out!</p>
-                    </div>
-                    <div class="column">
-                        <img src="assets/weather pic/weather image.webp" alt="Snow" style="width:90%">
-                        <h2>Attractions</h2>
-                        <p>Places to visit around you.</p>
-                    </div>
-                    <div class="column">
-                        <img src="assets/weather pic/weather image.webp" alt="Snow" style="width:90%">
-                        <h2>Restaurants</h2>
-                        <p>Places to fill your stomach.</p>
-                    </div>
+            <div id="food">
+                <h2 class="display-4">Restaurants</h2>
+                <p class="subhead">Top Restaurants around you.</p>
+                <div class="cards" id="list_restaurant">
                 </div>
-            </div> -->
-            <!-- <div class="visit_time">
-                <p>Best time to visit.</p>
-            </div> -->
-
-            
+            </div>
         </div>
-    </div>
-    <footer class="footer">
-        Made by TeamGTA ☺
-        &copy; Have a Safe Trip
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
-    <script src="assets/js/script.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-Ash0O1gw112gFDHbdCm-eloaQPi7pNk&callback=initAutocomplete&libraries=places&v=weekly" async></script>
+        <footer class="footer">
+            Made by TeamGTA ☺ &copy; Have a Safe Trip
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+        <script src="assets/js/script.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-Ash0O1gw112gFDHbdCm-eloaQPi7pNk&callback=initAutocomplete&libraries=places&v=weekly" async></script>
 </body>
 
 </html>
