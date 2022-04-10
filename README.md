@@ -62,4 +62,4 @@ Some top restaurants will be shown after the attrations since tourist gets hungr
 ![Screen Shot 2022-04-10 at 5 10 30 PM](https://user-images.githubusercontent.com/99456130/162641419-4e6ad110-06cb-4a90-879e-59ad763e60ee.png)
  
  # Screenshot Of Restaurant
- [Screen Shot 2022-04-10 at 5 53 34 PM](https://user-images.githubusercontent.com/99456130/162641498-dd26b4dc-47a4-4724-b44f-50a6f73218b8.png)
+ [![Screen Shot 2022-04-10 at 6 03 47 PM](https://user-images.githubusercontent.com/99456130/162641800-e0a9dc1c-4de8-4def-8a0f-81462c3c60c8.png)
