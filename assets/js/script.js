@@ -3,6 +3,7 @@ $(function () {
   $("#weather").hide();
   $("#food").hide();
   $("#results").hide();
+  $("#place_description").hide();
   parallax_height();
 });
 
@@ -39,12 +40,15 @@ function initAutocomplete() {
   // Listen for the event fired when the user selects a prediction and retrieve
   // more details for that place.
   searchBox.addListener("places_changed", () => {
+    $("#place_description").hide();
     $("#results").show();
     const places = searchBox.getPlaces();
     console.log("===Place Info Object====");
     console.log(places);
     var selected_city = places[0]["formatted_address"];
     // get weather Object
+    console.log("===Selected City ===");
+    console.log(selected_city);
     getWeather(selected_city);
     getGeoName(selected_city);
     if (places.length == 0) {
@@ -57,6 +61,9 @@ function initAutocomplete() {
 var apiKey_weather = "c09649ce8ab2b228d992062f0a8f1b58";
 
 function getWeather(city) {
+  console.log("===Weather City===");
+  console.log(city);
+  
   $("#weather").show();
   const msg = document.querySelector(".top-banner .msg");
   const list = document.querySelector(".ajax-section .cities");
@@ -66,10 +73,11 @@ function getWeather(city) {
 
   fetch(url)
     .then((response) => response.json())
-    .then((data) => {
+    .then((data) => {  
       const { main, name, sys, weather } = data;
       const icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${weather[0]["icon"]}.svg`;
-
+      console.log("===Fetch City===");
+      console.log(name, sys.country); 
       const li = document.createElement("li");
       li.className = "city text-center";
 
@@ -100,15 +108,15 @@ function getWeather(city) {
 const apiKey_openTrip =
   "5ae2e3f221c38a28845f05b694bb9c66ec3a567403ff0c00d6e3e5c1";
 
-function apiGet(method, query) {
+function apiGet(method, query1) {
   return new Promise(function (resolve, reject) {
     var otmAPI =
       "https://api.opentripmap.com/0.1/en/places/" +
       method +
       "?apikey=" +
       apiKey_openTrip;
-    if (query !== undefined) {
-      otmAPI += "&" + query;
+    if (query1 !== undefined) {
+      otmAPI += "&" + query1;
     }
     fetch(otmAPI)
       .then((response) => response.json())
@@ -127,11 +135,17 @@ let lat; // place latitude
 let offset = 0; // offset from first object in the list
 let count; // total objects count
 function getGeoName(name) {
+
+    console.log("===Geo Name===");
+    console.log(name);  
+    var split_city = name.split(", ");
+    console.log(split_city);
   $("#tourist_attraction").show();
 
-  apiGet("geoname", "name=" + name).then(function (data) {
+  apiGet("geoname", "name=" + split_city[0]).then(function (data) {
     let message = "Name not found";
     if (data.status == "OK") {
+    console.log("THIS IS WORKING",data);
       message = data.name;
       lon = data.lon;
       lat = data.lat;
@@ -142,6 +156,8 @@ function getGeoName(name) {
 }
 
 function getRestaurants(lat, lon) {
+    console.log("===Lat & Lon===");
+    console.log(lat, lon);
   const request = {
     location: new google.maps.LatLng(lat, lon),
     radius: 5000,
@@ -245,6 +261,7 @@ function createListItem(item) {
 
   a.addEventListener("click", function () {
     document.querySelectorAll("#list a").forEach(function (item) {
+        $("#place_description").show();
       item.classList.remove("active");
     });
     this.classList.add("active");
@@ -258,45 +275,3 @@ document.getElementById("next_button").addEventListener("click", function () {
   offset += pageLength;
   loadList();
 });
-
-// Worldwide Restaurant API
-
-// var apiKey_food = '3ca2473663mshadfed96d78e1943p118f82jsnb3ea968dd263'
-
-// function getfood(city) {
-//     $('#weather').show();
-//     const msg = document.querySelector(".top-banner .msg");
-//     const list = document.querySelector(".ajax-section .cities");
-//     //ajax here
-//     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey_weather}&units=metric`;
-
-//     fetch(url)
-//         .then(response => response.json())
-//         .then(data => {
-//             const { main, name, sys, weather } = data;
-//             const icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${
-//         weather[0]["icon"]
-//       }.svg`;
-
-//             const li = document.createElement("li");
-//             li.classList.add("city");
-//             const markup = `
-//         <h2 class="city-name" data-name="${name},${sys.country}">
-//           <span>${name}</span>
-//           <sup>${sys.country}</sup>
-//         </h2>
-//         <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup></div>
-//         <figure>
-//           <img class="city-icon" src="${icon}" alt="${
-//         weather[0]["description"]
-//       }">
-//           <figcaption>${weather[0]["description"]}</figcaption>
-//         </figure>
-//       `;
-//             li.innerHTML = markup;
-//             list.appendChild(li);
-//         })
-//         .catch(() => {
-//             msg.textContent = "Please search for a valid city 😩";
-//         });
-// }

@@ -6,6 +6,11 @@ A project that will return weather data and tourist information for a destinatio
 
 Our objective is to make a browser which provides the weather, top attractions, and top restaurants on which ever city users search for, it helps user save time on surfing through all the websites, while our browser is all in one.
 
+# Documentation
+
+Project proposal and Project Presentation can be found in the Documentation folder on the repository.
+
+
 # Technologies Used
 
 Technology we used for the project are HTML, CSS, Javascript, APIs.
